@@ -5,9 +5,9 @@ import {
   Output,
   EventEmitter
 } from '@angular/core';
-import addDays from 'date-fns/add_days';
-import addWeeks from 'date-fns/add_weeks';
-import addMonths from 'date-fns/add_months';
+import * as addDays from 'date-fns/add_days';
+import * as addWeeks from 'date-fns/add_weeks';
+import * as addMonths from 'date-fns/add_months';
 
 /**
  * Change the view date to the next view. For example:

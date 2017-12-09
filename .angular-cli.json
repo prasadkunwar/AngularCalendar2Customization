@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "cv",
       "styles": [
+        "angular-calendar.scss",
         "styles.scss"
       ],
       "scripts": [],

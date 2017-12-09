@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import '../src/angular-calendar.scss';
+//import '../angular-calendar.scss';
 import { AppComponent } from './app.component';
 import {
   MatAutocompleteModule,
@@ -40,7 +40,9 @@ import {
 } from '@angular/material';
 
 import {CdkTableModule} from '@angular/cdk/table';
-import { CalendarModule } from 'angular-calendar';
+//import { CalendarModule } from 'angular-calendar';
+
+import {CalendarModule} from '../modules/calendar.module';
 
 @NgModule({
   exports: [

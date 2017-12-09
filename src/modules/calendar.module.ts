@@ -1,5 +1,5 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { DraggableHelper } from 'angular-draggable-droppable';
+import { DraggableHelper} from 'angular-draggable-droppable';
 import {
   CalendarCommonModule,
   CalendarModuleConfig,

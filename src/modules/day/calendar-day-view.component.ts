@@ -21,7 +21,7 @@ import {
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
 import { ResizeEvent } from 'angular-resizable-element';
-import addMinutes from 'date-fns/add_minutes';
+import * as addMinutes from 'date-fns/add_minutes';
 import { CalendarDragHelper } from '../common/calendar-drag-helper.provider';
 import { CalendarResizeHelper } from '../common/calendar-resize-helper.provider';
 import { CalendarEventTimesChangedEvent } from '../common/calendar-event-times-changed-event.interface';
@@ -81,9 +81,6 @@ export interface DayViewEventResize {
             (resizing)="resizing(dayEvent, $event)"
             (resizeEnd)="resizeEnded(dayEvent)"
             mwlDraggable
-            [dragAxis]="{x: false, y: dayEvent.event.draggable && currentResizes.size === 0}"
-            [dragSnapGrid]="{y: eventSnapSize}"
-            [validateDrag]="validateDrag"
             (dragStart)="dragStart(event, dayViewContainer)"
             (dragEnd)="eventDragged(dayEvent, $event.y)"
             [style.marginTop.px]="dayEvent.top"

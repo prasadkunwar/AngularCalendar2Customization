@@ -20,7 +20,7 @@ import {
   WeekViewEventRow
 } from 'calendar-utils';
 import { ResizeEvent } from 'angular-resizable-element';
-import addDays from 'date-fns/add_days';
+import * as addDays from 'date-fns/add_days';
 import { CalendarDragHelper } from '../common/calendar-drag-helper.provider';
 import { CalendarResizeHelper } from '../common/calendar-resize-helper.provider';
 import { CalendarEventTimesChangedEvent } from '../common/calendar-event-times-changed-event.interface';
