@@ -33,17 +33,9 @@ const colors: any = {
 })
 export class AppComponent {
 
-
-  //@ViewChild('modalContent') modalContent: TemplateRef<any>;
-
     view: string = 'month';
 
     viewDate: Date = new Date();
-
-    // modalData: {
-    //   action: string;
-    //   event: CalendarEvent;
-    // };
 
   actions: CalendarEventAction[] = [
     {
