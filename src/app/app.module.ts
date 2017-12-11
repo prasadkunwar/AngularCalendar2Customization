@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 //import '../angular-calendar.scss';
 import { AppComponent } from './app.component';
+import { EventDialogComponent } from './event-dialog/event-dialog.component';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -43,6 +44,7 @@ import {CdkTableModule} from '@angular/cdk/table';
 //import { CalendarModule } from 'angular-calendar';
 
 import {CalendarModule} from '../modules/calendar.module';
+
 
 @NgModule({
   exports: [
@@ -84,8 +86,10 @@ export class NGDemoMaterialModule {}
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EventDialogComponent
   ],
+  entryComponents: [EventDialogComponent],
   imports: [
     BrowserModule,
     NGDemoMaterialModule,

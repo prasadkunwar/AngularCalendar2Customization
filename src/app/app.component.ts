@@ -7,7 +7,8 @@ import {  CalendarEvent,  CalendarEventAction,  CalendarEventTimesChangedEvent} 
 import {DataSource} from '@angular/cdk/collections';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
-
+import {MatDialog, MatDialogRef,MAT_DIALOG_DATA}  from '@angular/material';
+import { EventDialogComponent } from './event-dialog/event-dialog.component';
 
 const colors: any = {
   red: {
@@ -33,16 +34,16 @@ const colors: any = {
 export class AppComponent {
 
 
-  @ViewChild('modalContent') modalContent: TemplateRef<any>;
+  //@ViewChild('modalContent') modalContent: TemplateRef<any>;
 
     view: string = 'month';
 
     viewDate: Date = new Date();
 
-    modalData: {
-      action: string;
-      event: CalendarEvent;
-    };
+    // modalData: {
+    //   action: string;
+    //   event: CalendarEvent;
+    // };
 
   actions: CalendarEventAction[] = [
     {
@@ -98,8 +99,7 @@ export class AppComponent {
 
   activeDayIsOpen: boolean = true;
 
-    //constructor(private modal: NgbModal) {}
-    constructor() {}
+  constructor(public dialog: MatDialog) {}
 
     dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
       if (isSameMonth(date, this.viewDate)) {
@@ -122,10 +122,18 @@ export class AppComponent {
       this.refresh.next();
     }
 
-    handleEvent(action: string, event: CalendarEvent): void {
-      this.modalData = { event, action };
-      //this.modal.open(this.modalContent, { size: 'lg' });
-    }
+
+    handleEvent(actionIn: string, eventIn: CalendarEvent): void {
+
+            let dialogRef = this.dialog.open(EventDialogComponent, {
+              width: 'auto',
+              data: { event: eventIn, action: actionIn }
+            });
+
+            dialogRef.afterClosed().subscribe(result => {
+              console.log('The dialog was closed');
+            });
+          }
 
     addEvent(): void {
       this.events.push({
