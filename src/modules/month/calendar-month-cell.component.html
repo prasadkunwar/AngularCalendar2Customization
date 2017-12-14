@@ -9,27 +9,25 @@ let-unhighlightDay="unhighlightDay"
 let-eventClicked="eventClicked"
 let-tooltipTemplate="tooltipTemplate"
 let-tooltipAppendToBody="tooltipAppendToBody">
-<div class="cal-cell-top">
+<div class="bf-cal-cell">
+<!-- <div class="cal-cell-top">
   <span class="cal-day-badge" *ngIf="day.badgeTotal > 0">{{ day.badgeTotal }}</span>
   <span class="cal-day-number">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
+</div> -->
+<!-- <div class="cal-cell-top cal-day-number">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</div> -->
+<div class="cal-cell-top">
+  <span class="cal-day-number">{{day.date | calendarDate:'weekViewColumnSubHeader':locale}}</span>
 </div>
-
-
-<span> Breakfast
-<a href="#">
-    <span style="padding-left: 100px;">  <i class="fa fa-plus fa-fw"></i> </span>
-  </a>
-</span>
-<span> Lunch
-<a href="#">
-    <span style="padding-left: 100px;">  <i class="fa fa-plus fa-fw"></i> </span>
-  </a>
-</span>
-<span> Dinner
-<a href="#">
-    <span style="padding-left: 100px;">  <i class="fa fa-plus fa-fw"></i> </span>
-  </a>
-</span>
+<div class="bf-cell">
+Breakfast
+</div>
+<div class="lunch-cell">
+Lunch
+</div>
+<div class="dinner-cell">
+Dinner
+</div>
+</div>
 
 <div class="cal-events" *ngIf="day.events.length > 0">
   <div

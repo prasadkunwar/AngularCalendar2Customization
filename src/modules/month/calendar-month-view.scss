@@ -27,24 +27,26 @@
   }
 
   .cal-cell-top {
-    min-height: 78px;
+    //min-height: 78px;
     flex: 1;
   }
+
 
   .cal-cell-row {
     display: flex;
   }
 
   .cal-cell {
-    float: left;
+    //float: left;
     flex: 1;
     display: flex;
-    flex-direction: column;
+    //flex-direction: column;
     align-items: stretch;
   }
 
   .cal-day-cell {
-    min-height: 120px;
+    min-height: 350px;
+    border: 1px solid greenyellow;
   }
 
   .cal-day-cell:not(:last-child) {
@@ -74,12 +76,14 @@
 
   .cal-day-number {
     font-size: 1.2em;
-    font-weight: 400;
-    opacity: 0.5;
-    margin-top: 15px;
-    margin-right: 15px;
-    float: right;
-    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    //opacity: 0.5;
+    //margin-top: 15px;
+    //margin-right: 15px;
+    //float: right;
+    //margin-bottom: 10px;
+
   }
 
   .cal-events {
@@ -146,4 +150,20 @@
       opacity: 0.3;
     }
   }
+
+
+.bf-cal-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.bf-cell, .lunch-cell, .dinner-cell {
+ flex: 2;
+}
+
+
+.bf-cell, .lunch-cell, .dinner-cell {
+  border-bottom:1px dotted black;
+}
+
 }
