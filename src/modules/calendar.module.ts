@@ -7,6 +7,7 @@ import {
   CalendarDateFormatter,
   CalendarUtils
 } from './common/calendar-common.module';
+
 import { CalendarMonthModule } from './month/calendar-month.module';
 import { CalendarWeekModule } from './week/calendar-week.module';
 import { CalendarDayModule } from './day/calendar-day.module';
@@ -37,12 +38,14 @@ export * from './day/calendar-day.module';
     CalendarMonthModule,
     CalendarWeekModule,
     CalendarDayModule
+
   ],
   exports: [
     CalendarCommonModule,
     CalendarMonthModule,
     CalendarWeekModule,
     CalendarDayModule
+
   ]
 })
 export class CalendarModule {
