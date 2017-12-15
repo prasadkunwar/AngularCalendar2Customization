@@ -18,7 +18,7 @@ let-tooltipAppendToBody="tooltipAppendToBody">
 <div class="cal-cell-top">
   <span class="cal-day-number">{{day.date | calendarDate:'weekViewColumnSubHeader':locale}}</span>
 </div>
-<cv-calendar-month-meal-view bf-cell></cv-calendar-month-meal-view>
+<cv-calendar-month-meal-view bf-cell [day]="day"></cv-calendar-month-meal-view>
 <!-- <div class="bf-cell">
 Breakfast
 </div>

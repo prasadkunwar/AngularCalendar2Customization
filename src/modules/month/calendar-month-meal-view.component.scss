@@ -1,4 +1,10 @@
 .mat-card {
-  margin: 0 16px 16px 0;
+  position: relative;
+  margin: 10px 6px 10px 6px;
   width: 200px;
+
+  .icon-add {
+      position: absolute;
+      right: 2px;
+    }
 }

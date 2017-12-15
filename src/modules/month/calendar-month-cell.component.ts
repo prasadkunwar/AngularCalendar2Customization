@@ -47,6 +47,7 @@ export class CalendarMonthCellComponent {
     event: CalendarEvent;
   }>();
 
+
   /**
    * @hidden
    */

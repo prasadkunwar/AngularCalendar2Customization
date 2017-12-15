@@ -1,11 +1,11 @@
 <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
     <mat-card fxFlex="1">
-        <mat-card-content>Breakfast: {{recipeName}} <mat-icon>add</mat-icon> </mat-card-content>
-
-
+        <mat-card-content>Breakfast: {{recipeName}}
+          <a href="#" (click)="openDialog()"><mat-icon class="icon-add">add</mat-icon></a>
+        </mat-card-content>
     </mat-card>
     <mat-card fxFlex="1">
-        Lunch
+        Lunch {{day.date | calendarDate:'weekViewColumnSubHeader':locale}}
     </mat-card>
 
     <mat-card fxFlex="1">
