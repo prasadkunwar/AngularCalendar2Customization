@@ -1,9 +1,13 @@
 <h1 mat-dialog-title>Add Dish for {{data.currentDay.date | calendarDate:'weekViewColumnSubHeader':locale}}</h1>
 <div mat-dialog-content>
-  <p>What's your favorite dish?</p>
-  <mat-form-field>
-    <input matInput tabindex="1" [(ngModel)]="data.recipeName">
-  </mat-form-field>
+<mat-form-field floatPlaceholder="never">
+  <input matInput placeholder="Recipe" [matAutocomplete]="reactiveAuto" [formControl]="recipeCtrl">
+  <mat-autocomplete #reactiveAuto="matAutocomplete" [displayWith]="displayFn">
+    <mat-option *ngFor="let recipe of reactiveRecipes | async" [value]="recipe">
+      <span>{{recipe.name}}</span>
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
 </div>
 <div mat-dialog-actions>
   <button mat-raised-button color="accent" [mat-dialog-close]="data.recipeName" tabindex="2">Ok</button>

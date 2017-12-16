@@ -13,10 +13,10 @@ export { CalendarMonthViewComponent } from './calendar-month-view.component';
 export { MonthViewDay as CalendarMonthViewDay } from 'calendar-utils';
 
 import {NGDemoMaterialModule} from '../../material-module';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [CommonModule, DragAndDropModule, CalendarCommonModule,NGDemoMaterialModule,FormsModule],
+  imports: [CommonModule, DragAndDropModule, CalendarCommonModule,NGDemoMaterialModule,FormsModule,ReactiveFormsModule ],
   declarations: [
     CalendarMonthViewComponent,
     CalendarMonthCellComponent,
