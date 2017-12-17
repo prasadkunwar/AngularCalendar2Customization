@@ -27,8 +27,9 @@
   }
 
   .cal-cell-top {
-    //min-height: 78px;
+    max-height: 40px;
     flex: 1;
+    position: relative;
   }
 
 
@@ -75,6 +76,8 @@
   }
 
   .cal-day-number {
+    position: absolute;
+    right: 0;
     font-size: 1.2em;
     font-weight: bold;
     color: #333;
@@ -86,6 +89,14 @@
 
   }
 
+.cal-hide-week {
+  position: absolute;
+  left:0;
+  font-size: 1.2em;
+  font-weight: 10px;
+  color: #333;
+  text-transform: uppercase;
+}
   .cal-events {
     flex: 1;
     align-items: flex-end;
@@ -113,7 +124,9 @@
   }
 
   .cal-day-cell.cal-weekend .cal-day-number {
-    color: darkred;
+    color: #333;
+    font-style: italic;
+
   }
 
   .cal-day-cell.cal-today {
@@ -157,13 +170,13 @@
   flex-direction: column;
 }
 
-.bf-cell, .lunch-cell, .dinner-cell {
- flex: 2;
-}
+// .bf-cell, .lunch-cell, .dinner-cell {
+//  flex: 2;
+// }
 
 
-.bf-cell, .lunch-cell, .dinner-cell {
-  border-bottom:1px dotted black;
-}
+// .bf-cell, .lunch-cell, .dinner-cell {
+//   border-bottom:1px dotted black;
+// }
 
 }
