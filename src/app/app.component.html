@@ -14,7 +14,7 @@
     <div fxFlex="25">
       <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
     </div>
-    <div fxFlex="25">
+    <div fxFlex="25" *ngIf="false">
       <div>
         <button mat-raised-button color="accent" (click)="view = 'month'" [class.active]="view === 'month'">
           Month
