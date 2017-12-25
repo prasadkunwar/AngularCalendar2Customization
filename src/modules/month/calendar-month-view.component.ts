@@ -187,6 +187,7 @@ export class CalendarMonthViewComponent
 
   showCalCellRow : boolean = true;
   rowNumClick : number = -1;
+  arrayOfRowNumClick: number[] =[];
   /**
    * @hidden
    */
@@ -254,7 +255,19 @@ export class CalendarMonthViewComponent
     console.log("My event - " + event.isWeekRowVisible.valueOf() + event.rowNum);
     this.showCalCellRow = !event.isWeekRowVisible.valueOf();
     this.rowNumClick = event.rowNum;
+    this.arrayOfRowNumClick.push(event.rowNum);
 
+  }
+  isInHideRowArray(rowIndex) : boolean{
+      if(this.arrayOfRowNumClick.indexOf(rowIndex) !== -1){
+        return true;
+      } else {
+        return false;
+      }
+  }
+
+  showAllClick(){
+      this.arrayOfRowNumClick = [];
   }
   /**
    * @hidden
