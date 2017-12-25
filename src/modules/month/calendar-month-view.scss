@@ -33,10 +33,16 @@
   }
 
 
-  .cal-cell-row {
+  .cal-cell-row  {
     display: flex;
   }
 
+.cal-cell-row-0 {
+  display:none;
+}
+.cal-cell-row-show {
+  display:flex;
+}
   .cal-cell {
     //float: left;
     flex: 1;

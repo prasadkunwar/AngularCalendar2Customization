@@ -8,10 +8,11 @@ let-highlightDay="highlightDay"
 let-unhighlightDay="unhighlightDay"
 let-eventClicked="eventClicked"
 let-tooltipTemplate="tooltipTemplate"
-let-tooltipAppendToBody="tooltipAppendToBody">
+let-tooltipAppendToBody="tooltipAppendToBody"
+>
 <div class="bf-cal-cell">
     <div class="cal-cell-top">
-      <!-- <span class="cal-hide-week">Hide week</span> -->
+      <span *ngIf="day.isWeekend"  class="cal-hide-week"> <a href="#" (click)="toggleWeekRow(rowIndex)">Hide week {{rowIndex}} {{isWeekRowVisible}}</a> </span>
       <span class="cal-day-number">{{day.date | calendarDate:'weekViewColumnSubHeader':locale}}</span>
     </div>
     <cv-calendar-month-meal-view bf-cell [day]="day"></cv-calendar-month-meal-view>

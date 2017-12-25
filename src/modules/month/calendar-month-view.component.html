@@ -5,8 +5,12 @@
     [customTemplate]="headerTemplate">
   </mwl-calendar-month-view-header>
   <div class="cal-days">
-    <div *ngFor="let rowIndex of view.rowOffsets">
-      <div class="cal-cell-row">
+    <div *ngFor="let rowIndex of view.rowOffsets" >
+        {{rowIndex}}{{showCalCellRow}}{{rowNumClick}}
+        <div class="cal-cell-row" *ngIf="!(!showCalCellRow && rowIndex===rowNumClick)">
+        <!-- <div class="cal-cell-row cal-cell-row-{{rowIndex}}"> -->
+      <!-- <div class="cal-cell-row cal-cell-row-{{rowIndex}}" [ngClass]= "{'cal-cell-row-0':hideCalCellRow}"> -->
+      <!-- [ngClass]="(hideCalCellRow==='true')?'cal-cell-row-hide':'cal-cell-row-show'"> -->
         <mwl-calendar-month-cell
           *ngFor="let day of view.days | slice : rowIndex : rowIndex + (view.totalDaysVisibleInWeek)"
           [class.cal-drag-over]="day.dragOver"
@@ -25,9 +29,14 @@
           (dragEnter)="day.dragOver = true"
           (dragLeave)="day.dragOver = false"
           (drop)="day.dragOver = false; eventDropped(day, $event.dropData.event)"
-          (eventClicked)="eventClicked.emit({event: $event.event})">
+          (eventClicked)="eventClicked.emit({event: $event.event})"
+          (hideWeekClicked)="handleHideWeekClick($event)"
+          [rowIndex]="rowIndex">
+          <!-- (hideWeekClicked)="handleHideWeekClick($event)" -->
         </mwl-calendar-month-cell>
       </div>
+
+
       <mwl-calendar-open-day-events
         [isOpen]="openRowIndex === rowIndex"
         [events]="openDay?.events"

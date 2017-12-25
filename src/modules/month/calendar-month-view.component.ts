@@ -31,6 +31,8 @@ import * as addSeconds from 'date-fns/add_seconds';
 import { CalendarEventTimesChangedEvent } from '../common/calendar-event-times-changed-event.interface';
 import { CalendarUtils } from '../common/calendar-utils.provider';
 import { validateEvents } from '../common/util';
+import { fadeInContent } from '@angular/material';
+import { HostBinding } from '@angular/core/src/metadata/directives';
 
 /**
  * Shows all events on a given month. Example usage:
@@ -183,6 +185,8 @@ export class CalendarMonthViewComponent
    */
   refreshSubscription: Subscription;
 
+  showCalCellRow : boolean = true;
+  rowNumClick : number = -1;
   /**
    * @hidden
    */
@@ -245,7 +249,13 @@ export class CalendarMonthViewComponent
       this.refreshSubscription.unsubscribe();
     }
   }
+  handleHideWeekClick(event:any){
+    //console.log(event);
+    console.log("My event - " + event.isWeekRowVisible.valueOf() + event.rowNum);
+    this.showCalCellRow = !event.isWeekRowVisible.valueOf();
+    this.rowNumClick = event.rowNum;
 
+  }
   /**
    * @hidden
    */

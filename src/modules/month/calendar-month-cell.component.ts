@@ -3,9 +3,11 @@ import {
   Input,
   Output,
   EventEmitter,
-  TemplateRef
+  TemplateRef,
+  ViewChild
 } from '@angular/core';
 import { MonthViewDay, CalendarEvent } from 'calendar-utils';
+
 
 @Component({
   selector: 'mwl-calendar-month-cell',
@@ -24,6 +26,10 @@ import { MonthViewDay, CalendarEvent } from 'calendar-utils';
   }
 })
 export class CalendarMonthCellComponent {
+  isWeekRowVisible: boolean = false;
+  @Input()rowIndex: number;
+@ViewChild('defaultTemplate') defaultTemplate;
+hideSelectedWeek: boolean = false;
   @Input() day: MonthViewDay;
 
   @Input() openDay: MonthViewDay;
@@ -47,6 +53,8 @@ export class CalendarMonthCellComponent {
     event: CalendarEvent;
   }>();
 
+@Output()
+hideWeekClicked: EventEmitter<any>= new EventEmitter<any>();
 
   /**
    * @hidden
@@ -56,5 +64,20 @@ export class CalendarMonthCellComponent {
       mouseEvent.stopPropagation();
     }
     this.eventClicked.emit({ event: calendarEvent });
+  }
+
+  toggleWeekRow(rowNum : number) : void {
+    this.isWeekRowVisible =  !this.isWeekRowVisible;
+    console.log("child data " + rowNum);
+    this.hideWeekClicked.emit(
+      {
+        isWeekRowVisible: this.isWeekRowVisible,
+        rowNum: rowNum
+      });
+    console.log(this.defaultTemplate);
+    this.hideSelectedWeek = true;
+    console.log(this.hideSelectedWeek);
+
+
   }
 }

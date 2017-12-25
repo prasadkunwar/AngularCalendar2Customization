@@ -13,7 +13,7 @@ export class CalendarMonthMealViewComponent {
 
   @Input() day: MonthViewDay;
 
-  recipeName: string ="Noodels";
+  recipeName: string ="Noodles";
   recipeTime: string= "10mins";
   currentDay: MonthViewDay = this.day;
   constructor(public dialog:MatDialog) { }
