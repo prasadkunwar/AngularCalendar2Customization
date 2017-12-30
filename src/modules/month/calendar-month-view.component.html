@@ -1,10 +1,11 @@
 <div class="cal-month-view">
+  <button mat-raised-button color="primary" (click)="showAllClick()">ShowAll</button>
   <mwl-calendar-month-view-header
     [days]="columnHeaders"
     [locale]="locale"
     [customTemplate]="headerTemplate">
   </mwl-calendar-month-view-header>
-<button mat-raised-button color="accent" (click)="showAllClick()">ShowAll</button>
+
   <div class="cal-days">
     <div *ngFor="let rowIndex of view.rowOffsets" >
         <!-- {{rowIndex}}{{showCalCellRow}}{{rowNumClick}} -->

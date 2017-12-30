@@ -20,8 +20,8 @@ export class CalendarMonthMealViewComponent {
 
   openDialog(): void {
     console.log("My Date: " + this.day.date);
-let mydateType = typeof(this.day.date);
-  console.log("My Date: " + mydateType);
+    let mydateType = typeof(this.day.date);
+    console.log("My Date: " + mydateType);
     let dialogRef = this.dialog.open(AddDishDialog, {
       width: '250px',
       data: { recipeName: this.recipeName, recipeTime: this.recipeTime, currentDay: this.day }
@@ -29,7 +29,9 @@ let mydateType = typeof(this.day.date);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.recipeName = result;
+      console.log(result.name);
+      this.recipeName = result.name;
+      console.log("This recipe name is " + this.recipeName);
     });
   }
 

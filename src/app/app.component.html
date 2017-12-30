@@ -1,32 +1,16 @@
 
 <div fxLayout="column">
-  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
-    <div fxFlex="25">
-
-      <button mat-raised-button color="accent" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="activeDayIsOpen = false">
+  <div fxLayout="column" fxLayoutGap="2px" fxLayoutAlign="center center" class="mainHeader">
+    <div>
+      <button mat-raised-button color="primary" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="activeDayIsOpen = false">
         Previous</button>
-      <button mat-raised-button color="accent" mwlCalendarToday [(viewDate)]="viewDate">Today</button>
-      <button mat-raised-button color="accent" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="activeDayIsOpen = false">
+      <button mat-raised-button color="primary" mwlCalendarToday [(viewDate)]="viewDate">Today</button>
+      <button mat-raised-button color="primary" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="activeDayIsOpen = false">
         Next </button>
-
     </div>
 
-    <div fxFlex="25">
-      <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
-    </div>
-    <div fxFlex="25" *ngIf="false">
-      <div>
-        <button mat-raised-button color="accent" (click)="view = 'month'" [class.active]="view === 'month'">
-          Month
-        </button>
-        <button mat-raised-button color="accent" (click)="view = 'week'" [class.active]="view === 'week'">
-          Week
-        </button>
-        <button mat-raised-button color="accent" (click)="view = 'day'" [class.active]="view === 'day'">
-          Day
-        </button>
-      </div>
-
+    <div>
+      <h3 class="monthName">{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
     </div>
   </div>
   <br>
@@ -34,27 +18,6 @@
     <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen"
       (dayClicked)="dayClicked($event.day)" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
     </mwl-calendar-month-view>
-    <mwl-calendar-week-view *ngSwitchCase="'week'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)"
-      (eventTimesChanged)="eventTimesChanged($event)">
-    </mwl-calendar-week-view>
-    <mwl-calendar-day-view *ngSwitchCase="'day'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)"
-      (eventTimesChanged)="eventTimesChanged($event)">
-    </mwl-calendar-day-view>
-  </div>
-
-  <br>
-  <br>
-  <br>
-
-  <div fxLayout="row" fxLayoutAlign="center center">
-    <div fxFlex="90">
-      <h3>
-        Edit events
-      </h3>
-    </div>
-    <div fxFlex="8">
-      <button mat-raised-button color="accent" (click)="addEvent()"> Add new </button>
-    </div>
   </div>
 
 

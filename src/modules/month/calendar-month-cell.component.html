@@ -12,7 +12,7 @@ let-tooltipAppendToBody="tooltipAppendToBody"
 >
 <div class="bf-cal-cell">
     <div class="cal-cell-top">
-      <span *ngIf="day.isWeekend"  class="cal-hide-week"> <a href="#" (click)="toggleWeekRow(rowIndex)">Hide week {{rowIndex}} {{isWeekRowVisible}}</a> </span>
+      <span *ngIf="day.isWeekend"  class="cal-hide-week"> <a href="#" (click)="toggleWeekRow(rowIndex)">Hide week</a> </span>
       <span class="cal-day-number">{{day.date | calendarDate:'weekViewColumnSubHeader':locale}}</span>
     </div>
     <cv-calendar-month-meal-view bf-cell [day]="day"></cv-calendar-month-meal-view>

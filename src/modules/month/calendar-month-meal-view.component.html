@@ -1,17 +1,23 @@
 <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
-    <mat-card fxFlex="1">
+    <mat-card fxFlex="1"  (click)="openDialog()">
         <mat-card-content>Breakfast: {{recipeName}}
           <a href="#" (click)="openDialog()"><mat-icon class="icon-add">add</mat-icon></a>
         </mat-card-content>
     </mat-card>
-    <mat-card fxFlex="1">
-        Lunch {{day.date | calendarDate:'weekViewColumnSubHeader':locale}}
+    <mat-card fxFlex="1"  (click)="openDialog()">
+        <mat-card-content>Breakfast: {{recipeName}}
+            <a href="#" (click)="openDialog()"><mat-icon class="icon-add">add</mat-icon></a>
+          </mat-card-content>
     </mat-card>
-    <mat-card fxFlex="1">
-      Snack {{day.date | calendarDate:'weekViewColumnSubHeader':locale}}
+    <mat-card fxFlex="1"  (click)="openDialog()">
+      <mat-card-content>Snack: {{recipeName}}
+          <a href="#" (click)="openDialog()"><mat-icon class="icon-add">add</mat-icon></a>
+        </mat-card-content>
     </mat-card>
-    <mat-card fxFlex="1">
-        Dinner
+    <mat-card fxFlex="1"  (click)="openDialog()">
+        <mat-card-content>Dinner: {{recipeName}}
+            <a href="#" (click)="openDialog()"><mat-icon class="icon-add">add</mat-icon></a>
+          </mat-card-content>
     </mat-card>
 
 </div>
