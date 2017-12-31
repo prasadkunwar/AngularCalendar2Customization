@@ -1,22 +1,24 @@
+
+
 <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
-    <mat-card fxFlex="1"  (click)="openDialog()">
-        <mat-card-content>Breakfast: {{recipeName}}
-          <a href="#" (click)="openDialog()"><mat-icon class="icon-add">add</mat-icon></a>
+    <mat-card fxFlex="1"  (click)="openDialog('B')">
+        <mat-card-content>Breakfast: {{this.recipeB.recipeName}}
+          <a href="#" (click)="openDialog('B')"><mat-icon class="icon-add">add</mat-icon></a>
         </mat-card-content>
     </mat-card>
-    <mat-card fxFlex="1"  (click)="openDialog()">
-        <mat-card-content>Breakfast: {{recipeName}}
-            <a href="#" (click)="openDialog()"><mat-icon class="icon-add">add</mat-icon></a>
+    <mat-card fxFlex="1"  (click)="openDialog('L')">
+        <mat-card-content>Lunch: {{this.recipeL.recipeName}}
+            <a href="#" (click)="openDialog('L')"><mat-icon class="icon-add">add</mat-icon></a>
           </mat-card-content>
     </mat-card>
-    <mat-card fxFlex="1"  (click)="openDialog()">
-      <mat-card-content>Snack: {{recipeName}}
-          <a href="#" (click)="openDialog()"><mat-icon class="icon-add">add</mat-icon></a>
+    <mat-card fxFlex="1"  (click)="openDialog('S')">
+      <mat-card-content>Snack:{{this.recipeS.recipeName}}
+          <a href="#" (click)="openDialog('S')"><mat-icon class="icon-add">add</mat-icon></a>
         </mat-card-content>
     </mat-card>
-    <mat-card fxFlex="1"  (click)="openDialog()">
-        <mat-card-content>Dinner: {{recipeName}}
-            <a href="#" (click)="openDialog()"><mat-icon class="icon-add">add</mat-icon></a>
+    <mat-card fxFlex="1"  (click)="openDialog('D')">
+        <mat-card-content>Dinner:{{this.recipeD.recipeName}}
+            <a href="#" (click)="openDialog('D')"><mat-icon class="icon-add">add</mat-icon></a>
           </mat-card-content>
     </mat-card>
 
