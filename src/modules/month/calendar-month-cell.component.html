@@ -16,7 +16,6 @@ let-tooltipAppendToBody="tooltipAppendToBody"
       <span class="cal-day-number">{{day.date | calendarDate:'weekViewColumnSubHeader':locale}}</span>
     </div>
     <cv-calendar-month-meal-view bf-cell [day]="day"></cv-calendar-month-meal-view>
-    <!-- <dialog-overview-example></dialog-overview-example> -->
 </div>
 
 <div class="cal-events" *ngIf="day.events.length > 0">
